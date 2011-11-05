@@ -9,6 +9,9 @@
 (global-set-key "\M-w" 'clipboard-kill-ring-save)
 (global-set-key "\C-y" 'clipboard-yank)
 
+; rebind list-buffers to buffer-menu
+(global-set-key "\C-x\C-b" 'buffer-menu)
+
 ; don't display startup screen
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
