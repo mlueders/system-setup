@@ -8,6 +8,6 @@ export SCALA_HOME=/opt/scala
 
 export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin
 
-alias rmbak="rm *~"
+alias rmbak="rm *~ .*~"
 alias jbkill="pkill -9 -f jboss"
 alias clean-ivy="rm -rf ~/.ant"
