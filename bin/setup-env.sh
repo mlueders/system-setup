@@ -6,6 +6,8 @@ export GROOVY_HOME=/opt/groovy
 export GRADLE_HOME=/opt/gradle
 export SCALA_HOME=/opt/scala
 
+export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin
+
 alias rmbak="rm *~"
 alias jbkill="pkill -9 -f jboss"
 alias clean-ivy="rm -rf ~/.ant"
