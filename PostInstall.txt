@@ -1,0 +1,20 @@
+git clone git@github.com:mlueders/system-setup.git
+ln --symbolic system-setup/bin bin
+ln --symbolic system-setup/bin/.emacs.el .emacs.el
+ln --symbolic system-setup/IdeaProjects IdeaProjects
+
+
+
+Ubuntu (10.04)
+
+*Improve initial ssh connect time
+Edit /etc/ssh/ssh_config
+- GSSAPIAuthentication yes
++ GSSAPIAuthentication no
+
+
+*Install sun jdk 1.6
+git clone git://github.com/flexiondotorg/oab-java6.git
+cd oab-java6
+sudo ./oab-java6.sh
+sudo apt-cache install sun-java6-jdk
