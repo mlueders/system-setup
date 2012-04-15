@@ -13,4 +13,4 @@ alias rmbak="rm *~ .*~"
 alias jbkill="pkill -9 -f jboss"
 alias clean-ivy="rm -rf ~/.ant"
 
-source ./functions.sh
+source ~/bin/functions.sh
