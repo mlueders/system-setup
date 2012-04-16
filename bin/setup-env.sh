@@ -12,5 +12,7 @@ export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin
 alias rmbak="rm *~ .*~"
 alias jbkill="pkill -9 -f jboss"
 alias clean-ivy="rm -rf ~/.ant"
+alias stop-ssh="sudo /etc/init.d/ssh stop"
+alias start-ssh="sudo /etc/init.d/ssh start"
 
 source ~/bin/functions.sh
