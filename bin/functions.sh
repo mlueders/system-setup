@@ -28,6 +28,10 @@ ant-debug() {
     ant $*
 }
 
+rmbak() {
+    rm *~
+}
+
 jbh() {
     cd /data/jboss
 }
