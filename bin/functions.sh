@@ -28,14 +28,6 @@ ant-debug() {
     ant $*
 }
 
-rmbak() {
-    rm *~
-}
-
-jbh() {
-    cd /data/jboss
-}
-
 starttc() {
     export JAVA_OPTS="-Djboss.server.home.dir=file:///data/jboss/server/balboa -Djboss.server.config.url=file:///data/jboss/server/balboa/conf/"
     echo "export CLASSPATH=/data/jboss/server/balboa/conf" > /opt/tomcat6/bin/setenv.sh
