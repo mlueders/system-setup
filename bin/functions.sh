@@ -1,5 +1,19 @@
 #!/bin/bash
 
+tgz() {
+    local DIR
+
+    if [ $1 ]; then
+        DIR="${1%/}"
+    else
+        echo "usage: tgz <dir name to archive>"
+        return
+    fi
+
+    echo "tar -zcf '$DIR.tgz' '$DIR/'"
+    `tar -zcf "$DIR.tgz" "$DIR/"`
+}
+
 addkey() {
     if [ $1 ]; then
         HOST=${1}.hoovers.com
