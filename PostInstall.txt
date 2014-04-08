@@ -3,7 +3,7 @@ ln -s system-setup/bin bin
 ln -s bin/.gitconfig .gitconfig
 ln -s bin/.emacs.el .emacs.el
 
-git clone git@github.com:mlueders/idea-plugins.git IdeaProjects/IdeaPlugins
+git clone git@github.com:mlueders/idea-plugins.git IdeaProjects/Personal
 
 
 
