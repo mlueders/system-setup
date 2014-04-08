@@ -1,7 +1,9 @@
 git clone git@github.com:mlueders/system-setup.git
-ln --symbolic system-setup/bin bin
-ln --symbolic system-setup/bin/.emacs.el .emacs.el
-ln --symbolic system-setup/IdeaProjects IdeaProjects
+ln -s system-setup/bin bin
+ln -s bin/.gitconfig .gitconfig
+ln -s bin/.emacs.el .emacs.el
+
+git clone git@github.com:mlueders/idea-plugins.git IdeaProjects/IdeaPlugins
 
 
 
