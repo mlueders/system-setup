@@ -1,5 +1,9 @@
 #!/bin/bash
 
+tree() {
+    find $1 -print | sed -e 's;[^/]*/;|--;g;s;--|; |;g'
+}
+
 tgz() {
     local DIR
 
