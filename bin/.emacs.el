@@ -28,3 +28,6 @@
 
 ; word wrap
 (global-visual-line-mode t)
+
+; remove the annoying scratch buffer message
+(setq initial-scratch-message "")
