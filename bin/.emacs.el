@@ -31,3 +31,5 @@
 
 ; remove the annoying scratch buffer message
 (setq initial-scratch-message "")
+
+(setq ruby-indent-level 4)
