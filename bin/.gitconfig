@@ -5,7 +5,11 @@
 	co = checkout
 	br = branch
 	ci = commit
+	ca = commit --amend
+	cp = cherry-pick
 	st = status
+	rbc = rebase --continue
+	pm = pull origin master
 	last = log -1 HEAD
 [core]
 	autocrlf = input
