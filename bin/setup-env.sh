@@ -7,6 +7,7 @@ export GRADLE_HOME=/opt/gradle
 export GRAILS_HOME=/opt/grails
 export SCALA_HOME=/opt/scala
 export M2_HOME=/opt/maven
+export MAVEN_OPTS="-Xmx2048m -XX:PermSize=128m"
 
 export PATH=/usr/local/bin:$PATH:~/bin:$JAVA_HOME/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$SCALA_HOME/bin:$M2_HOME/bin
 
