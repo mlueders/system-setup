@@ -9,6 +9,8 @@ export SCALA_HOME=/opt/scala
 export M2_HOME=/opt/maven
 export MAVEN_OPTS="-Xmx2048m -XX:PermSize=128m"
 
+export PS1="\w$ "
+
 export PATH=/usr/local/bin:$PATH:~/bin:$JAVA_HOME/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$SCALA_HOME/bin:$M2_HOME/bin
 
 alias rmbak="rm *~ .*~"
