@@ -56,3 +56,10 @@ stoptc() {
     pkill -9 -f org.apache.catalina.startup.Bootstrap
 }
 
+ghswitch() {
+    local WHO=$1
+    cp ~/.ssh/id_rsa.gh_${1} ~/.ssh/id_rsa.gh
+    cp ~/.ssh/id_rsa.gh_${1}.pub ~/.ssh/id_rsa.gh.pub
+    ssh-add -D
+    ssh-add ~/.ssh/id_rsa.gh
+}
