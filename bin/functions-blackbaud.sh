@@ -1,5 +1,5 @@
 #!/bin/bash
 
 bb() {
-    cd IdeaProjects/Blackbaud
+    cd ~/IdeaProjects/Blackbaud
 }
