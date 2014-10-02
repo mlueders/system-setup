@@ -1,18 +1,17 @@
 #!/bin/bash
 
 export DOCKER_HOST=tcp://localhost:4243
-export JAVA_HOME=/opt/JVMVersions/Current/Home
+export JAVA_HOME=/opt/JVMVersions/CurrentJDK/Home
 export GROOVY_HOME=/opt/groovy
 export GRADLE_HOME=/opt/gradle
 export GRAILS_HOME=/opt/grails
 export SCALA_HOME=/opt/scala
+export M2_HOME=/opt/maven
 
-export PATH=/usr/local/bin:$PATH:~/bin:$JAVA_HOME/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$SCALA_HOME/bin
+export PATH=/usr/local/bin:$PATH:~/bin:$JAVA_HOME/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$SCALA_HOME/bin:$M2_HOME/bin
 
 alias rmbak="rm *~ .*~"
-alias jbh="cd /data/jboss"
 alias jbkill="pkill -9 -f jboss"
-alias clean-ivy="rm -rf ~/.ant"
 alias stop-ssh="sudo /etc/init.d/ssh stop"
 alias start-ssh="sudo /etc/init.d/ssh start"
 alias gr="gradle --daemon"
@@ -22,5 +21,5 @@ source ~/bin/functions.sh
 source ~/bin/git-completion.bash
 
 # ruby initialization
-export RBENV_ROOT=/usr/local/var/rbenv
-eval "$(rbenv init -)"
+# export RBENV_ROOT=/usr/local/var/rbenv
+# eval "$(rbenv init -)"
