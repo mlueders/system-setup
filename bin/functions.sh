@@ -52,4 +52,7 @@ ghswitch() {
     cp ~/.ssh/id_rsa.gh_${1}.pub ~/.ssh/id_rsa.gh.pub
     ssh-add -D
     ssh-add ~/.ssh/id_rsa.gh
+
+    local EMAIL=`awk '{ print($NF) }' ~/.ssh/id_rsa.gh.pub`
+    git config --global user.email $EMAIL
 }
