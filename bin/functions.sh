@@ -46,16 +46,6 @@ ant-debug() {
     ant $*
 }
 
-starttc() {
-    export JAVA_OPTS="-Djboss.server.home.dir=file:///data/jboss/server/balboa -Djboss.server.config.url=file:///data/jboss/server/balboa/conf/"
-    echo "export CLASSPATH=/data/jboss/server/balboa/conf" > /opt/tomcat6/bin/setenv.sh
-    /opt/tomcat6/bin/catalina.sh start
-}
-
-stoptc() {
-    pkill -9 -f org.apache.catalina.startup.Bootstrap
-}
-
 ghswitch() {
     local WHO=$1
     cp ~/.ssh/id_rsa.gh_${1} ~/.ssh/id_rsa.gh
