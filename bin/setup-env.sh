@@ -18,6 +18,7 @@ alias gr="gradle --daemon"
 alias gw="./gradlew --daemon"
 
 source ~/bin/functions.sh
+source ~/bin/functions-blackbaud.sh
 source ~/bin/git-completion.bash
 
 # ruby initialization
