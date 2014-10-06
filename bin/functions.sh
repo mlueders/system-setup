@@ -47,9 +47,20 @@ ant-debug() {
 }
 
 ghswitch() {
-    local WHO=$1
-    cp ~/.ssh/id_rsa.gh_${1} ~/.ssh/id_rsa.gh
-    cp ~/.ssh/id_rsa.gh_${1}.pub ~/.ssh/id_rsa.gh.pub
+    local ID=$1
+
+    if [ "${ID}" == "" ]; then
+        echo "ERROR: rsa id required"
+        return
+    fi
+
+    if [ ! -f ~/.ssh/id_rsa.gh_${ID} ]; then
+        echo "ERROR: ~/.ssh/id_rsa.gh_${ID} does not exist"
+        return
+    fi
+
+    cp ~/.ssh/id_rsa.gh_${ID} ~/.ssh/id_rsa.gh
+    cp ~/.ssh/id_rsa.gh_${ID}.pub ~/.ssh/id_rsa.gh.pub
     ssh-add -D
     ssh-add ~/.ssh/id_rsa.gh
 
