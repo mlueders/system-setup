@@ -15,3 +15,5 @@
 	autocrlf = input
 	excludesfile = /Users/michael.lueders/.gitignore_global
 	ignorecase = false
+[color]
+	ui = true
