@@ -1,6 +1,9 @@
 ; 3/11/11
 ; http://www.gnu.org/software/emacs/emacs-lisp-intro/
 
+; add custom script dir
+(add-to-list 'load-path "~/bin/.emacs.d/")
+
 ; turn tabs to spaces
 (setq-default indent-tabs-mode nil)
 
@@ -56,3 +59,9 @@
       (backup-buffer)))
 (add-hook 'before-save-hook  'force-backup-of-buffer)
 
+; 
+
+
+; install Dockerfile mode (https://github.com/spotify/dockerfile-mode)
+(require 'dockerfile-mode)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
