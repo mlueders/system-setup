@@ -25,7 +25,6 @@
 - unarchive: src={{ install_tmp_dir }}/groovy-docs-{{ groovy_version }}.zip dest={{ install_dir }}
   when: not groovy_home_reg.stat.exists
 - file: src={{ groovy_home }} dest={{ install_dir }}/groovy state=link
-  when: not groovy_home_reg.stat.exists
 
 
 # Install Grails
@@ -40,7 +39,6 @@
 - unarchive: src={{ install_tmp_dir }}/grails-docs-{{ grails_version }}.zip dest={{ grails_home }}
   when: not grails_home_reg.stat.exists
 - file: src={{ grails_home }} dest={{ install_dir }}/grails state=link
-  when: not grails_home_reg.stat.exists
 
 
 # Install Maven :(
@@ -51,4 +49,22 @@
 - unarchive: src={{ install_tmp_dir }}/apache-maven-{{ maven_version }}-bin.tar.gz dest={{ install_dir }}
   when: not maven_home_reg.stat.exists
 - file: src={{ maven_home }} dest={{ install_dir }}/maven state=link
-  when: not maven_home_reg.stat.exists
+
+
+# Install IDEA
+- stat: path={{ idea_home }}
+  register: idea_home_reg
+- get_url: url=http://download.jetbrains.com/idea/ideaIU-{{ idea_version }}.tar.gz dest={{ install_tmp_dir }}
+  when: not idea_home_reg.stat.exists
+- script: assert_idea_build_matches.sh {{ install_tmp_dir }}/ideaIU-{{ idea_version }}.tar.gz {{ idea_build }}
+  when: not idea_home_reg.stat.exists
+- unarchive: src={{ install_tmp_dir }}/ideaIU-{{ idea_version }}.tar.gz dest={{ install_dir }}
+  when: not idea_home_reg.stat.exists
+- file: src={{ idea_home }} dest={{ install_dir }}/ideaIU state=link
+# Install IDEA gnome desktop entry
+- file: src={{ idea_home }} dest={{ install_dir }}/ideaIU-{{ idea_major_version }} state=link
+- template: src=idea.desktop.j2 dest=/usr/share/applications/idea-{{ idea_major_version }}.desktop
+
+
+# Cleanup tmp dir
+- file: dest={{ install_tmp_dir }} state=absent

@@ -6,9 +6,6 @@ edit /etc/ansible/ansible.cfg
   ask_sudo_pass  = True
   
 
-
-git clone git@github.com:mlueders/idea-plugins.git IdeaProjects/Personal
-
 # TODO: verify whether this is still necessary; if so, add to ansible
 
 Ubuntu (10.04)

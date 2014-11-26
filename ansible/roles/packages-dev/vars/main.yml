@@ -13,3 +13,8 @@ grails_home: "{{ install_dir }}/grails-{{ grails_version }}"
 
 maven_version: 3.0.5
 maven_home: "{{ install_dir }}/apache-maven-{{ maven_version }}"
+
+idea_major_version: 13
+idea_version: 13.1.6
+idea_build: 135.1306
+idea_home: "{{ install_dir }}/idea-IU-{{ idea_build }}"

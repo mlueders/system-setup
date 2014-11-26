@@ -1,6 +1,8 @@
 - hosts: local
 
   vars:
+    idea_workspace: ~/IdeaProjects
+
   roles:
     - { role: packages-sys, sudo: yes }
     - { role: packages-dev, sudo: yes }
@@ -11,3 +13,6 @@
     - file: src=~/bin/.emacs.el dest=~/.emacs.el state=link
 
     - lineinfile: dest=~/.bashrc line='source ~/bin/setup-env.sh' create=yes
+
+    - file: path={{ idea_workspace }} state=directory
+    - git: repo=git@github.com:mlueders/idea-plugins.git dest={{ idea_workspace }}/IdeaPlugins accept_hostkey=yes
