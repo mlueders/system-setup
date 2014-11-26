@@ -1,0 +1,54 @@
+---
+- file: dest={{ install_dir }} state=directory
+- file: dest={{ install_tmp_dir }} state=directory
+
+# Install Gradle
+- stat: path={{ gradle_home }}
+  register: gradle_home_reg
+- get_url: url=https://services.gradle.org/distributions/gradle-{{ gradle_version }}-all.zip dest={{ install_tmp_dir }}
+  when: not gradle_home_reg.stat.exists
+- unarchive: src={{ install_tmp_dir }}/gradle-{{ gradle_version }}-all.zip dest={{ install_dir }}
+  when: not gradle_home_reg.stat.exists
+- file: src={{ gradle_home }} dest={{ install_dir }}/gradle state=link
+  when: not gradle_home_reg.stat.exists
+
+
+# Install Groovy
+- stat: path={{ groovy_home }}
+  register: groovy_home_reg
+- get_url: url=http://dl.bintray.com/groovy/maven/groovy-binary-{{ groovy_version }}.zip dest={{ install_tmp_dir }}
+  when: not groovy_home_reg.stat.exists
+- unarchive: src={{ install_tmp_dir }}/groovy-binary-{{ groovy_version }}.zip dest={{ install_dir }}
+  when: not groovy_home_reg.stat.exists
+- get_url: url=http://dl.bintray.com/groovy/maven/groovy-docs-{{ groovy_version }}.zip dest={{ install_tmp_dir }}
+  when: not groovy_home_reg.stat.exists
+- unarchive: src={{ install_tmp_dir }}/groovy-docs-{{ groovy_version }}.zip dest={{ install_dir }}
+  when: not groovy_home_reg.stat.exists
+- file: src={{ groovy_home }} dest={{ install_dir }}/groovy state=link
+  when: not groovy_home_reg.stat.exists
+
+
+# Install Grails
+- stat: path={{ grails_home }}
+  register: grails_home_reg
+- get_url: url=http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-{{ grails_version }}.zip dest={{ install_tmp_dir }}
+  when: not grails_home_reg.stat.exists
+- unarchive: src={{ install_tmp_dir }}/grails-{{ grails_version }}.zip dest={{ install_dir }}
+  when: not grails_home_reg.stat.exists
+- get_url: url=http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-docs-{{ grails_version }}.zip dest={{ install_tmp_dir }}
+  when: not grails_home_reg.stat.exists
+- unarchive: src={{ install_tmp_dir }}/grails-docs-{{ grails_version }}.zip dest={{ grails_home }}
+  when: not grails_home_reg.stat.exists
+- file: src={{ grails_home }} dest={{ install_dir }}/grails state=link
+  when: not grails_home_reg.stat.exists
+
+
+# Install Maven :(
+- stat: path={{ maven_home }}
+  register: maven_home_reg
+- get_url: url=http://apache.mirrors.lucidnetworks.net/maven/maven-3/{{ maven_version }}/binaries/apache-maven-{{ maven_version }}-bin.tar.gz dest={{ install_tmp_dir }}
+  when: not maven_home_reg.stat.exists
+- unarchive: src={{ install_tmp_dir }}/apache-maven-{{ maven_version }}-bin.tar.gz dest={{ install_dir }}
+  when: not maven_home_reg.stat.exists
+- file: src={{ maven_home }} dest={{ install_dir }}/maven state=link
+  when: not maven_home_reg.stat.exists

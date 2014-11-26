@@ -1,11 +1,15 @@
 git clone git@github.com:mlueders/system-setup.git
-ln -s system-setup/bin bin
-ln -s bin/.gitconfig .gitconfig
-ln -s bin/.emacs.el .emacs.el
+
+install ansible
+edit /etc/ansible/ansible.cfg
+  nocows = 1
+  ask_sudo_pass  = True
+  
+
 
 git clone git@github.com:mlueders/idea-plugins.git IdeaProjects/Personal
 
-
+# TODO: verify whether this is still necessary; if so, add to ansible
 
 Ubuntu (10.04)
 
@@ -13,10 +17,3 @@ Ubuntu (10.04)
 Edit /etc/ssh/ssh_config
 - GSSAPIAuthentication yes
 + GSSAPIAuthentication no
-
-
-*Install sun jdk 1.6
-git clone git://github.com/flexiondotorg/oab-java6.git
-cd oab-java6
-sudo ./oab-java6.sh
-sudo apt-cache install sun-java6-jdk

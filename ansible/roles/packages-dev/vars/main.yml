@@ -1,0 +1,15 @@
+---
+install_dir: /opt
+install_tmp_dir: /opt/tmp
+
+gradle_version: 2.2.1
+gradle_home: "{{ install_dir }}/gradle-{{ gradle_version }}"
+
+groovy_version: 2.3.7
+groovy_home: "{{ install_dir }}/groovy-{{ groovy_version }}"
+
+grails_version: 2.4.4
+grails_home: "{{ install_dir }}/grails-{{ grails_version }}"
+
+maven_version: 3.0.5
+maven_home: "{{ install_dir }}/apache-maven-{{ maven_version }}"

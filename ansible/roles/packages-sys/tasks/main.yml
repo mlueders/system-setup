@@ -1,0 +1,33 @@
+---
+# install docker
+- apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=36A1D7869245C8950F966E92D8576A8BA88D21E9
+- apt_repository: repo='deb https://get.docker.com/ubuntu docker main' state=present update_cache=yes
+- apt: name={{ item }} state=present
+  with_items:
+  - apparmor
+  - lxc-docker
+
+# install chrome
+- apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
+- apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present update_cache=yes
+- apt: name=google-chrome-stable state=present
+
+# install java
+- apt_repository: repo='deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main' update_cache=yes
+- apt_repository: repo='deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main' update_cache=yes
+- name: Automatically select the Oracle License
+  shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+- apt: name={{ item }} state=present
+  with_items:
+  - oracle-java6-installer
+  - oracle-java7-installer
+  - oracle-java8-installer
+
+- apt: name={{ item }} state=present
+  with_items:
+  - emacs24
+  - git
+  - gnome-do
+  - gnome-disk-utility
+  - gparted
+  - network-manager-openconnect
