@@ -15,5 +15,6 @@
 	autocrlf = input
 	excludesfile = /Users/michael.lueders/.gitignore_global
 	ignorecase = false
+	editor = vi
 [color]
 	ui = true
