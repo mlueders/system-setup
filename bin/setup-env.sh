@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export DOCKER_HOST=tcp://192.168.55.55:2375
 export JAVA_HOME=/opt/JVMVersions/CurrentJDK/Home
 export GROOVY_HOME=/opt/groovy
 export GRADLE_HOME=/opt/gradle
