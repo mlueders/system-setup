@@ -1,3 +1,4 @@
+;;; source - https://github.com/spotify/dockerfile-mode/blob/master/dockerfile-mode.el
 ;;; dockerfile-mode.el --- Major mode for editing Docker's Dockerfiles
 
 ;; Copyright (c) 2013 Spotify AB
