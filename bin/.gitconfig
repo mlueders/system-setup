@@ -13,7 +13,7 @@
 	last = log -1 HEAD
 [core]
 	autocrlf = input
-	excludesfile = /Users/michael.lueders/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	ignorecase = false
 	editor = vi
 [color]
