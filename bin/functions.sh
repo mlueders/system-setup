@@ -41,11 +41,6 @@ addkey() {
     `cat ~/.ssh/id_rsa.pub | ssh mlueders@${HOST} $COMMAND`
 }
 
-ant-debug() {
-    export ANT_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=4142"
-    ant $*
-}
-
 ghswitch() {
     local ID=$1
 
@@ -103,7 +98,7 @@ function select_from_options() {
 
     if [ "${OPTIONS}" = "" ]; then
         echo "ERROR: No options provided"
-        exit 1
+        return 1
     fi
 
     PS3="${PROMPT}: "
