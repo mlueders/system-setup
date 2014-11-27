@@ -15,6 +15,7 @@ if [ `uname` = 'Linux' ]; then
     set_java_home
 else
     source ~/bin/functions-osx.sh
+    source ~/bin/realpath.sh
     export JAVA_HOME=/opt/JVMVersions/CurrentJDK/Home
 fi
 

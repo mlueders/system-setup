@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function realpath() {
+    echo `readlink -f $1`
+}
+
 function swjava() {
     local INDEX=$1
     local JVM
@@ -20,3 +24,4 @@ function set_java_home() {
     local ALT_JAVA_LS=`ls -l /etc/alternatives/java`
     export JAVA_HOME=`echo "${ALT_JAVA_LS}" | sed 's/.* -> \(.*\)\/jre\/bin\/java$/\1/'`
 }
+
