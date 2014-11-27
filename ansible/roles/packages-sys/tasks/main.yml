@@ -7,6 +7,10 @@
   - apparmor
   - lxc-docker
 
+# install docker bash completion
+- get_url: url=https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker dest=/etc/bash_completion.d/
+- replace: dest=/etc/bash_completion.d/docker regexp='^\s*(docker 2>/dev/null "\$@")\s*$' replace='    sudo \1'
+
 # install chrome
 - apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
 - apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present update_cache=yes
