@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export LUMINATE_HOME=/Users/mlueders/IdeaProjects/Blackbaud/luminate-online
-export CONVIO_DB_USERNAME='mlueders'
+export LUMINATE_HOME="`realpath ~/IdeaProjects/Blackbaud`"
+export LUMINATE_ONLINE_HOME="${LUMINATE_HOME}/luminate-online"
 
 source ~/bin/functions-blackbaud.sh
