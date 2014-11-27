@@ -78,7 +78,7 @@ swjava() {
     local JVM
 
     if [ -z "${INDEX}" ]; then
-        select_from_options JVM "JVM" ${VERSIONS[@]}
+        _select_from_options JVM "JVM" ${VERSIONS[@]}
     else
         local VERSIONS_ARRAY=(${VERSIONS[@]})
         INDEX=$((INDEX - 1))
@@ -90,7 +90,7 @@ swjava() {
     java -version
 }
 
-function select_from_options() {
+function _select_from_options() {
     local VARNAME=$1
     local PROMPT=$2
     shift; shift
