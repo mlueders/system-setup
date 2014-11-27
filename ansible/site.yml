@@ -11,6 +11,7 @@
     - file: src=~/system-setup/bin dest=~/bin state=link
     - file: src=~/bin/.gitconfig dest=~/.gitconfig state=link
     - file: src=~/bin/.emacs.el dest=~/.emacs.el state=link
+    - file: src=~/bin/.vimrc dest=~/.vimrc state=link
 
     - lineinfile: dest=~/.bashrc line='source ~/bin/setup-env.sh' create=yes
 
