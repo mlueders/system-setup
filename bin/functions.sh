@@ -123,3 +123,13 @@ function dbash() {
 
     docker exec -it "${CONTAINER_ID}" /bin/bash
 }
+
+function _dbash() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+
+    COMPREPLY=()
+    # NOTE: this function relies on docker bash completion
+    __docker_containers_running
+}
+
+complete -F _dbash dbash
