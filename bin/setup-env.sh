@@ -40,4 +40,5 @@ alias stop-ssh="sudo /etc/init.d/ssh stop"
 alias start-ssh="sudo /etc/init.d/ssh start"
 alias gr="gradle --daemon"
 alias gw="./gradlew --daemon"
+alias gwo="./gradlew --daemon --offline"
 alias ll='ls -lah'

@@ -1,13 +1,5 @@
 #!/bin/bash
 
-bb() {
-    cd ~/IdeaProjects/Blackbaud
-}
-
-lo() {
-    cd ~/IdeaProjects/Blackbaud/luminate-online
-}
-
 awsssh() {
     local USER=$1
     local HOST=$2
