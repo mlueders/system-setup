@@ -6,7 +6,7 @@ swjava() {
     local JVM
 
     if [ -z "${INDEX}" ]; then
-        select_from_options JVM "JVM" ${VERSIONS[@]}
+        _select_from_options JVM "JVM" ${VERSIONS[@]}
     else
         local VERSIONS_ARRAY=(${VERSIONS[@]})
         INDEX=$((INDEX - 1))
@@ -14,5 +14,6 @@ swjava() {
     fi
 
     export JAVA_HOME=$(/usr/libexec/java_home -v $JVM)
+    export PATH=$JAVA_HOME/bin:$PATH
     java -version
 }
