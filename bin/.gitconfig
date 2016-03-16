@@ -8,6 +8,7 @@
 	ca = commit --amend
 	cp = cherry-pick
 	st = status
+	dc = diff --cached
 	rbc = rebase --continue
 	pm = pull origin master
 	last = log -1 HEAD
@@ -18,3 +19,5 @@
 	editor = vi
 [color]
 	ui = true
+[push]
+	default = simple
