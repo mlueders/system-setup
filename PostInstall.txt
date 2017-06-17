@@ -4,7 +4,9 @@ install ansible
 edit /etc/ansible/ansible.cfg
   nocows = 1
   ask_sudo_pass  = True
-  
+
+install sdkman
+http://sdkman.io/install.html
 
 # TODO: verify whether this is still necessary; if so, add to ansible
 

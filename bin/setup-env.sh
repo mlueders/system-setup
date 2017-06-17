@@ -20,25 +20,32 @@ else
 fi
 
 
-export GROOVY_HOME=/opt/groovy
-export GRADLE_HOME=/opt/gradle
-export GRAILS_HOME=/opt/grails
-export SCALA_HOME=/opt/scala
 export S3CMD_HOME=/opt/s3cmd
-export M2_HOME=/opt/maven
-export MAVEN_OPTS="-Xmx2048m -XX:PermSize=128m"
+export GOLANG_HOME=/usr/local/go
 
 export PS1="\w$ "
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
-export PATH=/usr/local/bin:$PATH:~/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$SCALA_HOME/bin:$M2_HOME/bin:$S3CMD_HOME
+export PATH=/usr/local/bin:$PATH:~/bin:$S3CMD_HOME:$GOLANG_HOME/bin
+
+# gopath is for intellij plugin
+export GOPATH=$GOLANG_HOME
 
 alias rmbak="rm -f *~ .*~"
-alias jbkill="pkill -9 -f jboss"
 alias stop-ssh="sudo /etc/init.d/ssh stop"
 alias start-ssh="sudo /etc/init.d/ssh start"
 alias gr="gradle --daemon"
 alias gw="./gradlew --daemon"
 alias gwo="./gradlew --daemon --offline"
 alias ll='ls -lah'
+alias gdf='git diff --color | diff-so-fancy'
+alias gdc='git diff --cached --color | diff-so-fancy'
+alias whatsmyip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+alias ifm='cd ~/IdeaProjects/IdeaFlow'
+
+eval "$(hub alias -s)"
+
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
