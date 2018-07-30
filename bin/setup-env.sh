@@ -42,8 +42,10 @@ alias ll='ls -lah'
 alias gdf='git diff --color | diff-so-fancy'
 alias gdc='git diff --cached --color | diff-so-fancy'
 alias whatsmyip='dig +short myip.opendns.com @resolver1.opendns.com'
-
-alias ifm='cd ~/IdeaProjects/IdeaFlow'
+alias om='cd ~/IdeaProjects/Ideaflow'
+alias ds='cd ~/IdeaProjects/DreamScale'
+alias mk='minikube'
+alias kb='kubectl'
 
 eval "$(hub alias -s)"
 
